@@ -8,6 +8,4 @@ This project is an unofficial iOS counterpart to @kaledjs [HiveView](https://git
 - Pick a video and stream it with the MPMoviePlayerController
 
 ### Screenshots
-![](http://i.imgur.com/eqJJDj7.png =310x552)
-![](http://i.imgur.com/iZtrTiO.png =310x552)
-![](http://i.imgur.com/Vrjfw3q.png =310x552)
+![](http://i.imgur.com/5PK4Z5F.png)  |  ![](http://i.imgur.com/d0RAjeR.png)  |  ![](http://i.imgur.com/PpXMKTo.png)

@@ -13,17 +13,23 @@
 @end
 
 @implementation BeeDayViewController
-NSString *user = @"";
-NSString *password = @"";
-NSString *host = @"";
+NSString *user = @"bee";
+NSString *password = @"cs.13,bee";
+NSString *host = @"cs.appstate.edu/beemon/pit1";
 @synthesize titleLabel;
 @synthesize selectedDay;
 @synthesize player;
 @synthesize creds;
 @synthesize space;
+@synthesize tableView;
+@synthesize progressView, progressBar, progressLabel;
+bool finished = false;
+NSString *downloadName;
 NSArray *dayData;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [tableView setDelegate:self];
+    [tableView setDataSource:self];
     FTPManager *manager = [[FTPManager alloc] init];
     FMServer *server = [[FMServer alloc] init];
     [server setDestination:[NSString stringWithFormat:@"%@/%@/video", host, selectedDay]];
@@ -39,7 +45,9 @@ NSArray *dayData;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewDidLayoutSubviews {
+    finished = true;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -60,6 +68,9 @@ NSArray *dayData;
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(!finished) {
+        return;
+    }
     FTPManager *ftp = [[FTPManager alloc] init];
     FMServer *server = [[FMServer alloc] init];
     
@@ -73,8 +84,13 @@ NSArray *dayData;
     [server setUsername:user];
     [server setPassword:password];
     [ftp setDelegate:self];
-    
+    [NSString stringWithFormat:@"%@/%@", [NSURL fileURLWithPath:NSHomeDirectory()], videoName];
+    [progressBar setProgress:0];
+    [progressView setHidden:false];
+    [progressLabel setText:@"Downloading"];
+    downloadName = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), videoName];
     [ftp downloadFile:videoName toDirectory:[NSURL fileURLWithPath:NSHomeDirectory()] fromServer:server];
+    
     /**
     creds = [[NSURLCredential alloc] initWithUser:user password:password persistence:NSURLCredentialPersistenceForSession];
     
@@ -90,7 +106,25 @@ NSArray *dayData;
      **/
 }
 -(void)ftpManagerDownloadProgressDidChange:(NSDictionary *)processInfo {
-    
+    [progressBar setProgress:[(NSNumber*)[processInfo valueForKey:@"progress"] floatValue]];
+    if([(NSNumber*)[processInfo valueForKey:@"progress"] floatValue] == 1.0) {
+        [self startConversionOfDownloadedVideo:downloadName];
+    }
+}
+-(void)startConversionOfDownloadedVideo:(NSString*)video {
+    dispatch_async(dispatch_get_main_queue(),^{
+        [progressLabel setText:@"Converting"];
+    });
+    FFmpegWrapper *ffmpeg = [[FFmpegWrapper alloc] init];
+
+    [ffmpeg convertInputPath:video outputPath:NSHomeDirectory() options:@{@"fmt":@"h264", @"vcodec":@"copy"} progressBlock:^(NSUInteger bytesRead, uint64_t totalBytes, uint64_t totalExpectedBytesToRead)
+    {
+        [progressBar setProgress:(float)bytesRead / (float)totalExpectedBytesToRead]
+        ;
+    }
+    completionBlock:^(BOOL success, NSError *error){
+                 
+    }];
 }
 /*
  

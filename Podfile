@@ -3,6 +3,7 @@
 
 target 'bee' do
    pod 'FTPManager', '~> 1.6.5'
+     pod 'FFmpegWrapper', '~> 1.0'
 end
 
 target 'beeTests' do

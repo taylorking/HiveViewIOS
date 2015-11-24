@@ -13,9 +13,9 @@
 @end
 
 @implementation ViewController
-NSString *hostname = @"";
-NSString *username = @"";
-NSString *pass=@"";
+NSString *hostname = @"cs.appstate.edu/beemon/pit1";
+NSString *username = @"bee";
+NSString *pass=@"cs.13,bee";
 
 NSArray* data;
 UITableViewCell *selectedCell;

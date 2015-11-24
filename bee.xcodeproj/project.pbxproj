@@ -14,19 +14,8 @@
 		347970861B6DD42200EB627C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347970841B6DD42200EB627C /* Main.storyboard */; };
 		347970881B6DD42200EB627C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347970871B6DD42200EB627C /* Images.xcassets */; };
 		3479708B1B6DD42200EB627C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347970891B6DD42200EB627C /* LaunchScreen.xib */; };
-		347970971B6DD42200EB627C /* beeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347970961B6DD42200EB627C /* beeTests.m */; };
 		F2E8501840155561799BF65A /* libPods-bee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7A6BEEB4B79DB729F94A9E1 /* libPods-bee.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		347970911B6DD42200EB627C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3479706F1B6DD42200EB627C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 347970761B6DD42200EB627C;
-			remoteInfo = bee;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		343721571B6DE6E8000F0F56 /* BeeDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeDayViewController.h; sourceTree = "<group>"; };
@@ -41,9 +30,6 @@
 		347970851B6DD42200EB627C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		347970871B6DD42200EB627C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3479708A1B6DD42200EB627C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		347970901B6DD42200EB627C /* beeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = beeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		347970951B6DD42200EB627C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		347970961B6DD42200EB627C /* beeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beeTests.m; sourceTree = "<group>"; };
 		4FBB10CF1657AC6942454585 /* Pods-bee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bee/Pods-bee.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A6BEEB4B79DB729F94A9E1 /* libPods-bee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB3D4A5809C44A8C25B0344 /* Pods-bee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bee.release.xcconfig"; path = "Pods/Target Support Files/Pods-bee/Pods-bee.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,13 +41,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2E8501840155561799BF65A /* libPods-bee.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3479708D1B6DD42200EB627C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				347970791B6DD42200EB627C /* bee */,
-				347970931B6DD42200EB627C /* beeTests */,
 				347970781B6DD42200EB627C /* Products */,
 				037161834A739388C456FFFD /* Pods */,
 				4747387E08F873BFE665AB27 /* Frameworks */,
@@ -92,7 +70,6 @@
 			isa = PBXGroup;
 			children = (
 				347970771B6DD42200EB627C /* bee.app */,
-				347970901B6DD42200EB627C /* beeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,23 +96,6 @@
 			children = (
 				3479707B1B6DD42200EB627C /* Info.plist */,
 				3479707C1B6DD42200EB627C /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		347970931B6DD42200EB627C /* beeTests */ = {
-			isa = PBXGroup;
-			children = (
-				347970961B6DD42200EB627C /* beeTests.m */,
-				347970941B6DD42200EB627C /* Supporting Files */,
-			);
-			path = beeTests;
-			sourceTree = "<group>";
-		};
-		347970941B6DD42200EB627C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				347970951B6DD42200EB627C /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -171,24 +131,6 @@
 			productReference = 347970771B6DD42200EB627C /* bee.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3479708F1B6DD42200EB627C /* beeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3479709D1B6DD42200EB627C /* Build configuration list for PBXNativeTarget "beeTests" */;
-			buildPhases = (
-				3479708C1B6DD42200EB627C /* Sources */,
-				3479708D1B6DD42200EB627C /* Frameworks */,
-				3479708E1B6DD42200EB627C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				347970921B6DD42200EB627C /* PBXTargetDependency */,
-			);
-			name = beeTests;
-			productName = beeTests;
-			productReference = 347970901B6DD42200EB627C /* beeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +142,6 @@
 				TargetAttributes = {
 					347970761B6DD42200EB627C = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					3479708F1B6DD42200EB627C = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 347970761B6DD42200EB627C;
 					};
 				};
 			};
@@ -221,7 +159,6 @@
 			projectRoot = "";
 			targets = (
 				347970761B6DD42200EB627C /* bee */,
-				3479708F1B6DD42200EB627C /* beeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,13 +171,6 @@
 				347970861B6DD42200EB627C /* Main.storyboard in Resources */,
 				3479708B1B6DD42200EB627C /* LaunchScreen.xib in Resources */,
 				347970881B6DD42200EB627C /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3479708E1B6DD42200EB627C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,23 +236,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3479708C1B6DD42200EB627C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				347970971B6DD42200EB627C /* beeTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		347970921B6DD42200EB627C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 347970761B6DD42200EB627C /* bee */;
-			targetProxy = 347970911B6DD42200EB627C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		347970841B6DD42200EB627C /* Main.storyboard */ = {
@@ -448,40 +362,6 @@
 			};
 			name = Release;
 		};
-		3479709E1B6DD42200EB627C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = beeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bee.app/bee";
-			};
-			name = Debug;
-		};
-		3479709F1B6DD42200EB627C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = beeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bee.app/bee";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -499,15 +379,6 @@
 			buildConfigurations = (
 				3479709B1B6DD42200EB627C /* Debug */,
 				3479709C1B6DD42200EB627C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3479709D1B6DD42200EB627C /* Build configuration list for PBXNativeTarget "beeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3479709E1B6DD42200EB627C /* Debug */,
-				3479709F1B6DD42200EB627C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
